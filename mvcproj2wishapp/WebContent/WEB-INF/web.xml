@@ -1,3 +1,17 @@
 <web-app>
+	<servlet>
+		<servlet-name>dispacther</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+				<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<!-- Map all requests to the DispatcherServlet for handling -->
+	<servlet-mapping>
+		<servlet-name>dispacther</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	<welcome-file>index.jsp
+	</welcome-file>
+
 
 </web-app>

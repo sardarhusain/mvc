@@ -15,6 +15,9 @@ public class WishMessageservice implements WishService {
 		else if(hour<16)
 			return "good afternoon";
 		else if(hour<20)
+			return "good evening";
+		else
+			return "good night";
 			
 		
 	}

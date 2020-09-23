@@ -3,5 +3,24 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="wishservice" class=""
+ <!--  Handler Mapping -->
+   <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+       <property name="mappings">
+             <props>
+                 <prop key="welcome.htm">shc</prop>
+                 <prop key="wish.htm">wmc</prop>
+             </props>
+       </property>
+   </bean> 
+   
+   <bean id="shc"  class="com.nt.controller.ShowHomeController"/>
+<bean id="wmc" class="com.nt.controller.WishAppController">
+<constructor-arg ref="wishservice"></constructor-arg>
+</bean>
+
+<bean id="wishservice" class="com.nt.service.WishMessageservice"></bean>
+<bean id="res" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+ <property name="prefix"  value="/WEB-INF/pages/" />
+          <property name="suffix"  value=".jsp"/>
+</bean>
 </beans>
